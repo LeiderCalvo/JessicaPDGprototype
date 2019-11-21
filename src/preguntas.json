@@ -1,0 +1,116 @@
+[
+    {
+        "titulo": "Ayúdanos a generar estadísticas",
+        "tipo": "intro",
+        "imagen": "gif0"
+    },
+    {
+        "titulo": "¡Hola, gracias por participar!",
+        "tipo": "subintro",
+        "descripcion": "Llenando este formulario anónimo de 40 segundos ayudas a la Subsecretaría de Equidad de Género de la ciudad a recopilar estadísticas sobre la inseguridad que perciben las mujeres en el espacio público.",
+        "imagen": "gif1"
+    },
+    {
+        "titulo": "¿Con qué género te identificas?",
+        "tipo": "pregunta bifurcada",
+        "opciones": [{
+            "respuesta": "Femenino",
+            "direccion": 7
+        },
+        {
+            "respuesta": "Másculino",
+            "direccion": 3
+        },
+        {
+            "respuesta": "Mujer Trans",
+            "direccion": 7
+        },
+        {
+            "respuesta": "Hombre Trans",
+            "direccion": 3
+        }]
+    },
+    {
+        "titulo": "¿Qué edad tienes?",
+        "tipo": "pregunta",
+        "opciones": [ "Entre 15-18", "Entre 19-24", "Entre 25-34",  "Entre 34-44", "Entre 45-55", "Más de 55"]
+    },
+    {
+        "titulo": "Cuando a una mujer le silban, le tiran besos, le dicen piropos, la persiguen o le bloquean el paso, mientras transita por el espacio público ¿Qué es lo primero que piensas?",
+        "tipo": "pregunta",
+        "opciones": ["Es normal, porque está muy bonita", "Debe sentirse halagada por recibir tanta atención", "Si se viste así es porque quiere recibir piropos", "Debe sentirse incómoda recibiendo piropos de un extraño", "Es una falta de respeto, las mujeres no deberían aguantar piropos en la calle"]
+    },
+    {
+        "titulo": "Cuando a una mujer le silban, le tiran besos, le dicen piropos, la persiguen o le bloquean el paso, mientras transita por el espacio público ¿Qué sueles hacer?",
+        "tipo": "pregunta final",
+        "opciones": ["También le digo un piropo", "Me da risa", "Me quedo callado, el tema no es conmigo", "Intervengo y exijo respeto para esa mujer"]
+    },
+    {
+        "titulo": "Eso es todo,Pero ¿sabías que?:",
+        "tipo": "subintro",
+        "direccion": 0,
+        "descripcion": "Llenando este formulario anónimo de 40 segundos ayudas a la Subsecretaría de Equidad de Género de la ciudad a recopilar estadísticas sobre _ la inseguridad que perciben las mujeres en el espacio público.",
+        "imagen": "gif2"
+    },
+    {
+        "titulo": "¿Es la primera vez que usas este dispositivo?",
+        "tipo": "pregunta bifurcada",
+        "opciones": [{
+            "respuesta": "Si, esta es la primera vez",
+            "direccion": 10
+        },
+        {
+            "respuesta": "No es la primera vez",
+            "direccion": 8
+        }]
+    },
+    {
+        "titulo": "¿Qué edad tienes?",
+        "tipo": "pregunta",
+        "opciones": [ "Entre 15-18", "Entre 19-24", "Entre 25-34",  "Entre 34-44", "Entre 45-55", "Más de 55"]
+    },
+    {
+        "titulo": "Hoy ¿Cuántas veces te silbaron, te tiraron besos, te dijeron piropos, te persiguieron o te bloquearon el paso?",
+        "tipo": "pregunta final",
+        "opciones": ["Una sola vez","Más de dos veces","Más de 5 veces","Muchas, perdí la cuenta","Hoy no me pasó nada"]
+    },
+    {
+        "titulo": "¿Qué edad tienes?",
+        "tipo": "pregunta",
+        "opciones": [ "Entre 15-18", "Entre 19-24", "Entre 25-34",  "Entre 34-44", "Entre 45-55", "Más de 55"]
+    },
+    {
+        "titulo": "Cuando transitas por el espacio público ¿Te silban, te tiran besos, te dicen piropos, te persiguen o te bloquean el paso?",
+        "tipo": "pregunta bifurcada",
+        "opciones": [{
+            "respuesta": "Si, todos los días",
+            "direccion": 12
+        },
+        {
+            "respuesta": "Si, cada dos o tres días",
+            "direccion": 12
+        },
+        {
+            "respuesta": "Si, una vez por semana",
+            "direccion": 12
+        },
+        {
+            "respuesta": "Si, rara vez",
+            "direccion": 12
+        },
+        {
+            "respuesta": "No, nunca me ha pasado",
+            "direccion": 13
+        }]
+    },
+    {
+        "titulo": "¿En qué lugares es más común que te silben, te tiren besos, te digan piropos, te persigan o te bloqueen el paso?",
+        "tipo": "pregunta final",
+        "opciones": ["Transporte público, buses, MIO","Centros comerciales, universidad, bares, discotecas", "Calle o acera, ciclovías, parques"]
+    },
+    {
+        "titulo": "¿Has visto que a alguien más le silben, le tiren besos, le digan piropos, le persigan o le bloqueen el paso, mientras transita por el espacio público?",
+        "tipo": "pregunta final",
+        "opciones": ["Si, me ha tocado verlo", "No, nunca he visto algo así mientras voy por la calle"]
+    }
+]

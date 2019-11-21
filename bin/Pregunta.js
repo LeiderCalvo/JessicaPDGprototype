@@ -1,0 +1,127 @@
+class Pregunta {
+    constructor(app, pregunta, id) {
+        this.app = app;
+        this.pregunta = pregunta;
+        this.id = parseInt(id);
+        this.respSelc = 0;
+
+        this.marginLeft = 50;
+        this.marginTop = 80;
+        this.img;
+
+        if (this.pregunta.tipo === "intro"){
+            this.img = this.app.loadImage("./src/gif1.gif");
+        } else if (this.pregunta.tipo === "subintro"){
+            this.img = this.app.loadImage("./src/gif0.gif");
+        } else {
+            this.img = this.app.loadImage("./src/seleccionar.png");
+        }
+    }
+
+    pintar(){
+        this.app.textFont(this.app.fontBold);
+        this.app.textSize(40);
+        this.app.fill("#8373FF");
+        let textWidth = 1150;
+        if (this.pregunta.tipo === "intro"){
+            this.app.background("#8373FF");
+            this.app.fill(255);
+            this.app.textSize(80);
+            this.marginTop = 123;
+            textWidth = 500;
+
+        }
+        if(this.app.frameCount % 20 === 0){
+            this.app.image(this.img, 945, 650);
+        }else {
+            this.app.image(this.img, 955, 650);
+        }
+        
+        this.app.text(this.pregunta.titulo, this.marginLeft,this.marginTop, textWidth);
+        /*this.app.rect(40, 80, 900, 50);
+        console.log(title);
+        console.log(this.app.textWidth(this.pregunta.titulo)/1000);
+        */
+        this.app.textFont(this.app.fontRegular);
+        this.app.textSize(30);
+        this.app.fill(0);
+
+        if (this.pregunta.tipo === "subintro") {
+                this.app.text(this.pregunta.descripcion, this.marginLeft, 200, textWidth-400);
+                return;
+        }else if (this.pregunta.tipo === "intro"){
+
+            return;
+        }
+
+        for (let i = 0; i < this.pregunta.opciones.length; i++) {
+            let  elem = this.pregunta.opciones[i];
+            
+            if(this.pregunta.tipo === "pregunta bifurcada") {
+                elem = this.pregunta.opciones[i].respuesta;
+            }
+
+            this.app.noFill();
+            this.app.stroke("#8373FF");
+            this.app.strokeWeight(4);
+
+            let dist = (this.app.textWidth(this.pregunta.titulo)/1000)*50 + this.marginTop + 80;
+
+            if(this.respSelc == i){
+                this.app.rect(this.marginLeft-15, dist-48 +(i*95), 900, 70);
+            }
+
+            this.app.rect(this.marginLeft, dist-40 +(i*95), 55, 55);
+            this.app.fill(0);
+            this.app.noStroke();
+
+            this.app.text(elem, this.marginLeft + 90,dist +(i*95), 1150);
+        }
+    }
+
+    keyboard(){
+        if (this.app.keyCode === this.app.UP_ARROW) {
+            if(this.pregunta.tipo.includes("pregunta")){
+                if(this.respSelc -1 >= 0) this.respSelc --;
+            }
+        } else if (this.app.keyCode === this.app.DOWN_ARROW) {
+            if(this.pregunta.tipo.includes("pregunta")){
+                if(this.respSelc + 1 < this.pregunta.opciones.length)this.respSelc ++;
+            }
+        } else if (this.app.keyCode === this.app.RIGHT_ARROW) {
+            if (this.pregunta.tipo === "pregunta bifurcada") {
+                return {
+                    val: parseInt(this.pregunta.opciones[this.respSelc].direccion),
+                    titulo: this.pregunta.titulo+"\r\n",
+                    respuesta: this.pregunta.opciones[this.respSelc].respuesta +"\r\n"
+                };
+            } else if (this.pregunta.tipo === "pregunta final") {
+                return {
+                    val: 6,
+                    titulo: this.pregunta.titulo+"\r\n",
+                    respuesta: this.pregunta.opciones[this.respSelc] +"\r\n"
+                };
+            } else if (this.id === 6) {
+                return {
+                    val: 0,
+                    titulo: this.pregunta.titulo+"\r\n",
+                    respuesta: ""
+                };
+            }
+
+            let resp;
+
+            if(this.pregunta.opciones === undefined){
+                resp = ""
+            }else {
+                resp = this.pregunta.opciones[this.respSelc] +"\r\n"
+            }
+
+            return {
+                val: this.id + 1,
+                titulo: this.pregunta.titulo +"\r\n",
+                respuesta: resp
+            }
+        }
+    }
+}
