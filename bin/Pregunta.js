@@ -89,39 +89,28 @@ class Pregunta {
                 if(this.respSelc + 1 < this.pregunta.opciones.length)this.respSelc ++;
             }
         } else if (this.app.keyCode === this.app.RIGHT_ARROW) {
+            let obj = {
+                val: "",
+                titulo: this.pregunta.titulo+"\r\n",
+                respuesta: ""
+            };
+
             if (this.pregunta.tipo === "pregunta bifurcada") {
-                return {
-                    val: parseInt(this.pregunta.opciones[this.respSelc].direccion),
-                    titulo: this.pregunta.titulo+"\r\n",
-                    respuesta: this.pregunta.opciones[this.respSelc].respuesta +"\r\n"
-                };
+                obj.val = parseInt(this.pregunta.opciones[this.respSelc].direccion);
+                obj.respuesta = this.pregunta.opciones[this.respSelc].respuesta +"\r\n";
             } else if (this.pregunta.tipo === "pregunta final") {
-                return {
-                    val: 6,
-                    titulo: this.pregunta.titulo+"\r\n",
-                    respuesta: this.pregunta.opciones[this.respSelc] +"\r\n"
-                };
+                obj.val = 6;
+                obj.respuesta = this.pregunta.opciones[this.respSelc] +"\r\n";
             } else if (this.id === 6) {
-                return {
-                    val: 0,
-                    titulo: this.pregunta.titulo+"\r\n",
-                    respuesta: ""
-                };
-            }
-
-            let resp;
-
-            if(this.pregunta.opciones === undefined){
-                resp = ""
+                obj.val = 0;
+                obj.respuesta = "";
             }else {
-                resp = this.pregunta.opciones[this.respSelc] +"\r\n"
+                obj.val = this.id + 1;
+                obj.respuesta = this.pregunta.opciones === undefined? "" : this.pregunta.opciones[this.respSelc] +"\r\n";
             }
 
-            return {
-                val: this.id + 1,
-                titulo: this.pregunta.titulo +"\r\n",
-                respuesta: resp
-            }
+            return obj;
+
         }
     }
 }

@@ -14,7 +14,7 @@ new p5(function (app) {
     app.setup = function () {
         app.frameRate(60);
         app.createCanvas(1280, 800);
-            console.log(preguntas);
+            //console.log(preguntas);
 
         for (const prop in preguntas) {
             slides.push(new Pregunta(app, preguntas[prop], prop));
@@ -33,7 +33,6 @@ new p5(function (app) {
        let a =  seleccionada.keyboard();
        if (a !== undefined) {
            seleccionada = slides[a.val];
-           console.log(a);
 
            if(a.val === 0) {
                 app.saveStrings(string, (Math.random()*100) +'usuario.txt');
