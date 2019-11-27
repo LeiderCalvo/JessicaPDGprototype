@@ -17,7 +17,7 @@ new p5(function (app) {
 
         let img0 = app.loadImage("./src/gif1.gif");
         let img1 = app.loadImage("./src/gif0.gif");
-        let img2 = app.loadImage("./src/seleccionar.png");
+        let img2 = app.loadImage("./src/Seleccionar.png");
 
         for (const prop in preguntas) {
             slides.push(new Pregunta(app, preguntas[prop], prop, img0, img1, img2));
