@@ -89,10 +89,12 @@ class Pregunta {
         if (this.app.keyCode === this.app.UP_ARROW) {
             if(this.pregunta.tipo.includes("pregunta")){
                 if(this.respSelc -1 >= 0) this.respSelc --;
+                this.selected = false;
             }
         } else if (this.app.keyCode === this.app.DOWN_ARROW) {
             if(this.pregunta.tipo.includes("pregunta")){
                 if(this.respSelc + 1 < this.pregunta.opciones.length)this.respSelc ++;
+                this.selected = false;
             }
         } else if (this.app.keyCode === this.app.RIGHT_ARROW) {
 
