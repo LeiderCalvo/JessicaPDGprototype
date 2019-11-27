@@ -87,11 +87,11 @@ class Pregunta {
 
     keyboard(){
         if (this.app.keyCode === this.app.UP_ARROW) {
-            if(this.pregunta.tipo.includes("pregunta") && this.selected === false){
+            if(this.pregunta.tipo.includes("pregunta")){
                 if(this.respSelc -1 >= 0) this.respSelc --;
             }
         } else if (this.app.keyCode === this.app.DOWN_ARROW) {
-            if(this.pregunta.tipo.includes("pregunta") && this.selected === false){
+            if(this.pregunta.tipo.includes("pregunta")){
                 if(this.respSelc + 1 < this.pregunta.opciones.length)this.respSelc ++;
             }
         } else if (this.app.keyCode === this.app.RIGHT_ARROW) {
